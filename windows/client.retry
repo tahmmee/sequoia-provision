@@ -1,0 +1,4 @@
+172.23.121.59
+ansible_connection=ssh
+ansible_ssh_pass=couchbase
+ansible_ssh_user=root

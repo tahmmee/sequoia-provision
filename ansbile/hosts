@@ -1,0 +1,61 @@
+[ubuntu]
+172.23.106.14  # kvm638
+172.23.106.213 # kvm638
+172.23.105.83 # kvm638
+172.23.105.63 # kvm637
+172.23.105.62 # kvm637
+172.23.105.61 # kvm637
+172.23.105.60 # kvm637, index
+172.23.106.96 # kvm638, query
+kvm-s713.sc.couchbase.com  # remote 1
+xcp-s731.sc.couchbase.com  # remote 2
+[ubuntuclient]
+172.23.99.156
+
+[centos]
+172.23.108.103
+172.23.108.104
+172.23.108.105
+172.23.108.107
+172.23.108.108
+172.23.108.98
+172.23.108.97
+172.23.108.96
+172.23.108.100
+172.23.108.99
+[centosclient]
+172.23.108.94
+
+[windows]
+172.23.99.148
+172.23.99.150
+172.23.99.166
+172.23.99.153
+172.23.99.253
+172.23.99.168
+172.23.99.169
+172.23.99.162
+[windowsclient]
+172.23.121.59
+
+[docker]
+[windowsclient]
+[centosclient]
+[ubuntuclient]
+
+[couchbaseservers]
+[ubuntu]
+[centos]
+[windows]
+
+
+[windows:vars]
+ansible_connection=winrm
+ansible_ssh_user=Administrator
+ansible_ssh_pass=Membase123 
+
+[all:vars]
+ansible_connection=ssh 
+ansible_ssh_user=root 
+ansible_ssh_pass=couchbase
+
