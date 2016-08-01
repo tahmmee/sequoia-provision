@@ -36,7 +36,7 @@ xcp-s731.sc.couchbase.com  # remote 2
 172.23.99.169
 172.23.99.162
 [windowsclient]
-172.23.121.59
+172.23.121.132
 
 [docker]
 [windowsclient]
