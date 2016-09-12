@@ -54,3 +54,6 @@
   - name: kill memcached 
     raw: "taskkill /F /T /IM memcac*" 
     ignore_errors: true
+  - name: kill winrm 
+    raw: "taskkill /F /T /IM winrshost.exe" 
+    ignore_errors: true
