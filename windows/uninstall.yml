@@ -67,3 +67,6 @@
   - name: kill winrm 
     raw: "taskkill /F /T /IM winrshost.exe" 
     ignore_errors: true
+  - name: clean up
+    win_file: path='C:\Program Files\Couchbase\Server' state=absent
+    ignore_errors: true
