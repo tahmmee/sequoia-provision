@@ -1,14 +1,4 @@
 ---
-- hosts: syncgateways
-  tasks:
-  - name: start gateway
-    shell: "/root/start_gateway.sh"
-
-- hosts: elasticsearch
-  tasks:
-  - name: start elastic search
-    shell: "/root/start_es.sh"
-
 - hosts: ubuntu 
   vars:
     ver_no: "{{VER|default('4.5.0')}}"
