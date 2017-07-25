@@ -55,6 +55,12 @@ xcp-s731.sc.couchbase.com  # remote 2
 [centos]
 [windows]
 
+[syncgateways]
+172.23.99.23
+
+[elasticsearch]
+172.23.99.23
+
 
 [windows:vars]
 ansible_connection=winrm
