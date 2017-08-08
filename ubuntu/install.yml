@@ -29,8 +29,8 @@
     apt: name=couchbase-server state=absent
   - name: rm opt dir
     shell: "rm -rf /opt/couchbase"
-  - name: rm data dir
-    shell: "rm -rf /data/*"
+  - name: rm index dir
+    shell: "rm -rf /index/*"
   - debug: msg="Downloading {{build_url}}"
   - name: download binary
     get_url: url="{{build_url}}" dest="{{deb_path}}"
