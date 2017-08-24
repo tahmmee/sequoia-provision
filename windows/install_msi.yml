@@ -10,6 +10,8 @@
     url_var: "{{base_url}}/{{build_no}}/{{build_pkg}}"
     build_url: "{{URL|default(url_var)}}"
   tasks:
+  - name:  mktmp
+    win_file: path="C:/tmp" state=directory
   - name: copy wget 
     win_copy: src=wget.exe dest=c:/wget.exe
   - debug: 

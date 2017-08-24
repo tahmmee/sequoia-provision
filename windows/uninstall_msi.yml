@@ -40,8 +40,6 @@
   - name: firewall off 
     raw: "netsh advfirewall set publicprofile state off" 
     ignore_errors: true
-  - name:  clean 
-    win_file: path=D:\data state=absent
 
   - name: check version
     raw: 'type "C:\Program Files\Couchbase\Server\VERSION.txt"'
@@ -52,11 +50,20 @@
     when: chk_version.rc == 0
   - name: uninstall 
     win_msi:
-      path: "C:\\tmp\\5.0.0.msi"
+      path: "C:\\tmp\\{{chk_version.stdout_lines[0]}}.msi"
       state: absent
       wait: true
     when: chk_version.rc == 0
-
+  - name:  clean data 
+    win_file: path="D:/data" state=absent
+    ignore_errors: true
+  - name:  mkdata
+    win_file: path="C:/tmp" state=directory
+    ignore_errors: true
+  - name:  clean  tmp
+    win_file: path="C:/tmp/" state=absent
+  - name:  mktmp
+    win_file: path="C:/tmp" state=directory
   - name: kill epmd 
     raw: "taskkill /F /T /IM  epmd.exe*" 
     ignore_errors: true
